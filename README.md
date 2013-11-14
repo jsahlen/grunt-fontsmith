@@ -40,6 +40,9 @@ grunt.initConfig({
       // Multiple CSS outputs supported (generated .styl and .json files)
       destCss: 'actual_files/font.{styl,json}',
 
+      // Custom Mustache CSS template (will be fed into json2iconcss)
+      cssTemplate: 'actual_files/css_template.mustache.css',
+
       // Alternative formats (1)
       destCss:[
         'actual_files/font.styl',

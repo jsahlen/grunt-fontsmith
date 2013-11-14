@@ -54,6 +54,7 @@ module.exports = function (grunt) {
         src = data.src,
         destCssRaw = data.destCss,
         destFontsRaw = data.destFonts,
+        cssTemplate = data.cssTemplate,
         that = this;
 
     // Verify everything exists
@@ -72,6 +73,11 @@ module.exports = function (grunt) {
           'fonts': destFontFormats
         },
         done = this.async();
+
+    // Define custom CSS mustache template, if specified
+    if (cssTemplate) {
+      json2fontcss.addMustacheTemplate('grunt-fontsmith', grunt.file.read(cssTemplate));
+    }
 
     // // DEV: Override fontsmith for faster iterations
     // fontsmith = function (params, cb) {
@@ -159,7 +165,7 @@ module.exports = function (grunt) {
               fontFamily: fontFamily,
               // TODO: Move off of this and onto a proper observer pattern
               // TODO: Even better, the objectifier should pre-format this
-              template: cssFormat === 'styl' ? 'stylus' : cssFormat,
+              template: cssTemplate ? 'grunt-fontsmith' : cssFormat === 'styl' ? 'stylus' : cssFormat,
               options: cssOptions[cssFormat] || {}
             });
 
