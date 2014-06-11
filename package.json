@@ -1,7 +1,7 @@
 {
   "name": "grunt-fontsmith",
   "description": "Grunt plugin for composing SVGs into multiple fonts, a character mapping, and CSS variables",
-  "version": "0.3.0",
+  "version": "0.9.1",
   "homepage": "https://github.com/twolfson/grunt-fontsmith",
   "author": {
     "name": "Todd Wolfson",
@@ -23,30 +23,27 @@
   ],
   "main": "tasks/grunt-fontsmith",
   "engines": {
-    "node": ">= 0.6.0"
+    "node": ">= 0.8.0"
   },
   "scripts": {
-    "test": "doubleshot"
+    "test": "mocha"
   },
   "dependencies": {
-    "fontsmith": "~0.2.0",
+    "fontsmith": "~0.6.0",
     "mustache": "~0.7.2",
     "url2": "*",
-    "json2fontcss": "~0.2.0"
-  },
-  "_devDependencies": {
-    "grunt": "~0.3.17",
-    "doubleshot": "~1.0.2",
-    "async": "~0.2.7",
-    "stylus": "~0.32.1",
-    "temporary": "0.0.5"
+    "json2fontcss": "~0.2.0",
+    "shell-quote": "~1.4.1"
   },
   "devDependencies": {
     "grunt": "~0.4.0",
-    "doubleshot": "~1.1.1",
-    "async": "~0.2.7",
     "stylus": "~0.32.1",
-    "temporary": "0.0.5"
+    "chai": "~1.9.0",
+    "mocha": "~1.17.1",
+    "tmp": "0.0.23",
+    "image-diff": "~1.0.1",
+    "rimraf": "~2.2.6",
+    "grunt-cli": "~0.1.13"
   },
   "optionalDependencies": {},
   "keywords": [
